@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>VELMORA — Luxury Fashion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- 3D Viewer -->
+  <script type="module"
+    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+  </script>
+
+  <!-- PayPal Sandbox -->
+  <script src="https://www.paypal.com/sdk/js?client-id=SANDBOX_CLIENT_ID&currency=USD"></script>
+</head>
+
+<body>
+
+<header>
+  <h1>VELMORA</h1>
+  <p>Luxury Fashion Redefined</p>
+</header>
+
+<section class="shop">
+
+  <model-viewer
+    id="viewer"
+    src="assets/models/hoodie.glb"
+    camera-controls
+    auto-rotate
+    ar>
+  </model-viewer>
+
+  <div class="panel">
+
+    <label>Product</label>
+    <select id="product">
+      <option value="hoodie">Hoodie — $69.99</option>
+      <option value="tshirt">T-Shirt — $39.99</option>
+      <option value="shorts">Shorts — $34.99</option>
+      <option value="vest">Vest — $59.99</option>
+      <option value="cap">Cap — $24.99</option>
+      <option value="wallet">Wallet — $39.99</option>
+      <option value="gloves">Gloves — $29.99</option>
+      <option value="phonecase">Phone Case — $19.99</option>
+      <option value="shoes">Shoes — $89.99</option>
+      <option value="backpack">Backpack — $79.99</option>
+    </select>
+
+    <label>Promo Code</label>
+    <input id="promo" placeholder="Enter code">
+    <p id="promoText"></p>
+
+    <div id="paypal-button-container"></div>
+
+  </div>
+</section>
+
+<section class="dashboard">
+  <h2>Owner Dashboard</h2>
+  <p>Total Earnings: $<span id="balance">0.00</span></p>
+</section>
+
+<section class="refund">
+  <h2>Refund Request</h2>
+  <input id="refundEmail" placeholder="Customer email">
+  <input id="refundReason" placeholder="Reason">
+  <button id="refundBtn">Submit</button>
+  <p id="refundMsg"></p>
+</section>
+
+<section class="instagram">
+  <h2>VELMORA Community</h2>
+  <div class="grid">
+    <div></div><div></div><div></div>
+  </div>
+  <p>Follow us on Instagram</p>
+</section>
+
+<footer>
+  © 2026 VELMORA
+</footer>
+
+<script src="script.js"></script>
+<script src="paypal.js"></script>
+
+</body>
+  </html>
